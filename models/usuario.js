@@ -1,5 +1,9 @@
 const {DataTypes, Model} = require ('sequelize')
 const sequelize = require('../bd')
+const tarefa = require('./tarefa')
+const tipo = require('./tipo')
+const tipos = require('../controllers/rotas/tipos')
+const usuarios = require('../controllers/rotas/usuarios')
 class usuario extends Model{}
 usuario.init({
     nome: {

@@ -1,5 +1,6 @@
 const {DataTypes, Model} = require ('sequelize')
 const sequelize = require('../bd')
+const tipos = require('../controllers/rotas/tipos')
 class tipo extends Model{}
 tipo.init({
     nome: {
@@ -18,5 +19,6 @@ tipo.init({
     sequelize,
     modelName:'tipo'
 })
+
 sequelize.sync()
 module.exports = tipo
