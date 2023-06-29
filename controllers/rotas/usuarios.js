@@ -1,5 +1,5 @@
 module.exports = (app)=>{
-    let rota = 'usuario'
+    let rota = 'usuarios'
     app.get(`/consultar/${rota}/:id?`,async(req, res)=>{
         //implementar obter dados com o sequesize
         res.send(`get ${rota}`)
