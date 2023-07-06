@@ -4,15 +4,15 @@ const tipos = require('../controllers/rotas/tipos')
 class tipo extends Model{}
 tipo.init({
     nome: {
-        type: DataTypew.STRING(50),
+        type: DataTypes.STRING(50),
         allowNull:false
     },
     andamento: {
-        type: DataTypew.STRING(50),
+        type: DataTypes.STRING(50),
         allowNull:false
     },
     concluido: {
-        type: DataTypew.STRING,
+        type: DataTypes.STRING,
         allowNull:false
     }
 },{

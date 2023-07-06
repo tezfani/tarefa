@@ -1,31 +1,31 @@
 const {DataTypes, Model} = require ('sequelize')
 const sequelize = require('../bd')
-const tarefas = require('../controllers/rotas/tarefas')
-const tipos = require('../controllers/rotas/tipos')
-const usuarios = require('../controllers/rotas/usuarios')
+const tipos = new require('./tipo')
+const usuario = new require('./usuario')
+
 class tarefa extends Model{}
 tarefa.init({
     nome: {
-        type: DataTypew.STRING(50),
+        type: DataTypes.STRING(50),
         allowNull:false
     },
     data: {
-        type: DataTypew.STRING(50),
+        type: DataTypes.STRING(50),
         allowNull:false
     },
     arquivadas: {
-        type: DataTypew.STRING,
+        type: DataTypes.STRING(50),
         allowNull:false
     }
 },{
     sequelize,
     modelName:'tarefa'
 })
-tipo.hasOne(tarefa)
+tipos.hasOne(tarefa)
 tarefa.belongsTo(tipos)
 
 usuario.hasMany(tarefa)
-tarefa.belongsTo(usuarios)
+tarefa.belongsTo(usuario)
 
 sequelize.sync()
 module.exports = tarefa
